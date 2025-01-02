@@ -13,16 +13,14 @@ on:
         type: string
       compression:
         description: 'Compression setting'
-        required: true
         type: choice
         options:
           - brotli
           - gzip
-          - none
 
 jobs:
   call-update:
-    uses: ryanditjia/demo-actions/.github/workflows/update-web-player-registry.yml@main
+    uses: ryanditjia/demo-actions@main
     with:
       game_name: ${{ inputs.game_name }}
       url_prefix: ${{ inputs.url_prefix }}
