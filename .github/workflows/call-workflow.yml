@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Call Update Web Player Registry
-        uses: ryanditjia/demo-actions/.github/actions/update-web-player-registry.yml@main
+        uses: ryanditjia/demo-actions/.github/actions/update-web-player-registry/action.yml@main
         with:
           game_name: ${{ inputs.game_name }}
           url_prefix: ${{ inputs.url_prefix }}
