@@ -20,8 +20,15 @@ on:
 
 jobs:
   call-update:
-    uses: ryanditjia/demo-actions@main
-    with:
-      game_name: ${{ inputs.game_name }}
-      url_prefix: ${{ inputs.url_prefix }}
-      compression: ${{ inputs.compression }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo Game Name
+        run: echo "Game Name: ${{ inputs.game_name }}"
+
+      - name: Call Update Web Player Registry
+        uses: ryanditjia/demo-actions@main
+        with:
+          game_name: ${{ inputs.game_name }}
+          url_prefix: ${{ inputs.url_prefix }}
+          compression: ${{ inputs.compression }}
