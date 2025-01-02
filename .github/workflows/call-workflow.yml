@@ -1,0 +1,29 @@
+name: Call Update Web Player Registry
+
+on:
+  workflow_dispatch:
+    inputs:
+      game_name:
+        description: 'Game name'
+        required: true
+        type: string
+      url_prefix:
+        description: 'URL prefix to update'
+        required: true
+        type: string
+      compression:
+        description: 'Compression setting'
+        required: true
+        type: choice
+        options:
+          - brotli
+          - gzip
+          - none
+
+jobs:
+  call-update:
+    uses: ryanditjia/demo-actions/.github/workflows/update-web-player-registry.yml@main
+    with:
+      game_name: ${{ inputs.game_name }}
+      url_prefix: ${{ inputs.url_prefix }}
+      compression: ${{ inputs.compression }}
