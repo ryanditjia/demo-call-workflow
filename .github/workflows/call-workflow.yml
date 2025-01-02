@@ -20,6 +20,7 @@ on:
 
 jobs:
   call-update:
+    runs-on: ubuntu-latest
     steps:
       - name: Call Update Web Player Registry
         uses: ryanditjia/demo-actions/.github/actions/update-web-player-registry.yml@main
