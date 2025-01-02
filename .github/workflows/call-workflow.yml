@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Echo Game Name
-        run: echo "Game Name: ${{ inputs.game_name }}"
+        run: echo "Hello world"
 
       - name: Call Update Web Player Registry
         uses: ryanditjia/demo-actions@main
