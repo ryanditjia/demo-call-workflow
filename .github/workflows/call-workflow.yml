@@ -20,12 +20,9 @@ on:
 
 jobs:
   call-update:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Call Update Web Player Registry
-        uses: ryanditjia/demo-actions/.github/workflows/update-web-player-registry.yml@main
-        with:
-          game_name: ${{ inputs.game_name }}
-          url_prefix: ${{ inputs.url_prefix }}
-          compression: ${{ inputs.compression }}
+    name: Call Update Web Player Registry
+    uses: ryanditjia/demo-actions/.github/workflows/update-web-player-registry.yml@main
+    with:
+      game_name: ${{ inputs.game_name }}
+      url_prefix: ${{ inputs.url_prefix }}
+      compression: ${{ inputs.compression }}
