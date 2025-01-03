@@ -16,3 +16,4 @@ jobs:
         uses: ryanditjia/demo-actions@registry
         with:
           updated-value: ${{ inputs.updated-value }}
+          myToken: ${{ secrets.GITHUB_TOKEN }}
