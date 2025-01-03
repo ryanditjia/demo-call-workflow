@@ -1,30 +1,15 @@
-name: Call Update Web Player Registry
-
-on:
-  workflow_dispatch:
-    inputs:
-      game_name:
-        description: 'Game name'
-        required: true
-        type: string
-      url_prefix:
-        description: 'URL prefix to update'
-        required: true
-        type: string
-      compression:
-        description: 'Compression setting'
-        type: choice
-        options:
-          - brotli
-          - gzip
+on: workflow_dispatch
 
 jobs:
-  call-update:
+  hello_world_job:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
-      - name: Call Update Web Player Registry
-        uses: ryanditjia/demo-actions/.github/actions/update-web-player-registry/action.yml@main
+      - name: Hello world action step
+        id: hello
+        uses: ryanditjia/demo-actions@registry
         with:
-          game_name: ${{ inputs.game_name }}
-          url_prefix: ${{ inputs.url_prefix }}
-          compression: ${{ inputs.compression }}
+          who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
