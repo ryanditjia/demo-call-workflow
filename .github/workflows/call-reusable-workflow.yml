@@ -1,0 +1,33 @@
+on:
+  workflow_dispatch:
+    inputs:
+      web-player-env:
+        description: 'Web player environment'
+        required: true
+        type: choice
+        options:
+          - prod
+          - dev
+      game-name:
+        description: 'Game name'
+        required: true
+        type: string
+      url-prefix:
+        description: 'URL prefix to update'
+        required: true
+        type: string
+      compression:
+        description: 'Compression setting'
+        type: choice
+        options:
+          - brotli
+          - gzip
+      
+jobs:
+  call-reusable-workflow-passing-data:
+    uses: ryanditjia/demo-reusable-workflow@main
+    with:
+      web-player-env: ${{ inputs.web-player-env }}
+      game-name: ${{ inputs.game-name }}
+      url-prefix: ${{ inputs.url-prefix }}
+      compression: ${{ inputs.compression }}
