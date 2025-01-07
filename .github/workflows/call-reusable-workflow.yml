@@ -31,3 +31,5 @@ jobs:
       game-name: ${{ inputs.game-name }}
       url-prefix: ${{ inputs.url-prefix }}
       compression: ${{ inputs.compression }}
+    secrets:
+      web-player-repo-pat: ${{ secrets.WEB_PLAYER_REPO_PAT }}

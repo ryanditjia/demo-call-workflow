@@ -22,7 +22,6 @@ on:
         options:
           - brotli
           - gzip
-      
 
 jobs:
   update-web-player-registry:
